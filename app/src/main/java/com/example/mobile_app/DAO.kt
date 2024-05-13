@@ -1,8 +1,10 @@
+package com.example.mobile_app
+
 import androidx.room.*
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+//import androidx.room.Delete
+//import androidx.room.Insert
+//import androidx.room.Query
+//import androidx.room.Update
 import com.example.mobile_app.Entity
 import com.example.mobile_app.CardInfo
 
@@ -20,7 +22,7 @@ interface DAO {
     @Query("DELETE FROM To_Do")
     suspend fun deleteAll(): Int
 
-    @Query("SELECT * FROM To_Do")
-    suspend fun getTasks(): List<CardInfo>
-    //1git
+    @Query("SELECT * from To_Do")
+    suspend fun getTasks():List<CardInfo>
+
 }
