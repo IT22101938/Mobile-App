@@ -14,6 +14,7 @@ class Adapter(private var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.V
         fun bind(cardInfo: CardInfo) {
             binding.title.text = cardInfo.title
             binding.priority.text = cardInfo.priority
+            binding.day.text = cardInfo.day
 
             val context = binding.root.context
 

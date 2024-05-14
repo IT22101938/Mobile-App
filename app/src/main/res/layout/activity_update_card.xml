@@ -43,6 +43,18 @@
         android:textColor="@color/white"
         />
 
+    <EditText
+        android:id="@+id/create_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Priority"
+        android:padding="15dp"
+        android:background="@drawable/custom_edittetext"
+        android:textColorHint="#BFBBBB"
+        android:textColor="@color/white"
+        />
+
 
     <LinearLayout
         android:layout_width="250dp"

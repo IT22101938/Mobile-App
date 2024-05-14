@@ -24,12 +24,14 @@ class CreateCard : AppCompatActivity() {
         binding.saveButton.setOnClickListener{
             if (binding.createTitle.text.toString().trim { it <= ' ' }.isNotEmpty()
                 && binding.createPriority.text.toString().trim { it <= ' ' }.isNotEmpty()
+                && binding.createDay.text.toString().trim { it <= ' ' }.isNotEmpty()
             ){
                 val title = binding.createTitle.text.toString()
                 val priority = binding.createPriority.text.toString()
-                DataObject.setData(title, priority)
+                val day = binding.createDay.text.toString()
+                DataObject.setData(title, priority, day)
                 GlobalScope.launch {
-                    database.dao().insertTask(Entity(0, title, priority)) }
+                    database.dao().insertTask(Entity(0, title, priority,day)) }
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }

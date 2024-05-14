@@ -26,8 +26,10 @@ class UpdateCard : AppCompatActivity() {
         if (pos != -1) {
             val title = DataObject.getData(pos).title
             val priority = DataObject.getData(pos).priority
+            val day = DataObject.getData(pos).day
             binding.createTitle.setText(title)
             binding.createPriority.setText(priority)
+            binding.createDay.setText(day)
 
             binding.deleteButton.setOnClickListener {
                 DataObject.deleteData(pos)
@@ -37,7 +39,8 @@ class UpdateCard : AppCompatActivity() {
                             Entity(
                                 pos + 1,
                                 binding.createTitle.text.toString(),
-                                binding.createPriority.text.toString()
+                                binding.createPriority.text.toString(),
+                                binding.createDay.text.toString()
                             )
                         )
                     }
@@ -46,7 +49,7 @@ class UpdateCard : AppCompatActivity() {
             }
 
             binding.updateButton.setOnClickListener {
-                DataObject.updateData(pos, binding.createTitle.text.toString(), binding.createPriority.text.toString()
+                DataObject.updateData(pos, binding.createTitle.text.toString(), binding.createPriority.text.toString(), binding.createDay.text.toString()
                 )
                 GlobalScope.launch {
                     withContext(Dispatchers.IO) {
@@ -54,7 +57,8 @@ class UpdateCard : AppCompatActivity() {
                             Entity(
                                 pos + 1,
                                 binding.createTitle.text.toString(),
-                                binding.createPriority.text.toString()
+                                binding.createPriority.text.toString(),
+                                binding.createDay.text.toString()
                             )
                         )
                     }
