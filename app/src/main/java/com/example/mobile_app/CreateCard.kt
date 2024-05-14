@@ -28,8 +28,8 @@ class CreateCard : AppCompatActivity() {
                 val title = binding.createTitle.text.toString()
                 val priority = binding.createPriority.text.toString()
                 DataObject.setData(title, priority)
-               GlobalScope.launch {
-                  database.dao().insertTask(Entity(0, title, priority)) }
+                GlobalScope.launch {
+                    database.dao().insertTask(Entity(0, title, priority)) }
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
