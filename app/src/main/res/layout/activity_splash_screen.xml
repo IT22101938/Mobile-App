@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To Do"
+        android:text="My Week List"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/white"
         android:textSize="40sp"
@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Manage Your Day"
+        android:text="Manage Your Week"
         android:layout_gravity="center_horizontal"
         android:textColor="#8A8686"
         android:layout_marginTop="10dp"
