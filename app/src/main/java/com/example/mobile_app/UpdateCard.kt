@@ -49,24 +49,32 @@ class UpdateCard : AppCompatActivity() {
             }
 
             binding.updateButton.setOnClickListener {
-                DataObject.updateData(pos, binding.createTitle.text.toString(), binding.createPriority.text.toString(), binding.createDay.text.toString()
-                )
-                GlobalScope.launch {
-                    withContext(Dispatchers.IO) {
-                        database.dao().updateTask(
-                            Entity(
-                                pos + 1,
-                                binding.createTitle.text.toString(),
-                                binding.createPriority.text.toString(),
-                                binding.createDay.text.toString()
+                val newTitle = binding.createTitle.text.toString().trim()
+                val newPriority = binding.createPriority.text.toString().trim()
+                val newDay = binding.createDay.text.toString().trim()
+
+                if (newTitle.isNotEmpty() && newPriority.isNotEmpty() && newDay.isNotEmpty()) {
+                    DataObject.updateData(pos, newTitle, newPriority, newDay)
+                    GlobalScope.launch {
+                        withContext(Dispatchers.IO) {
+                            database.dao().updateTask(
+                                Entity(
+                                    pos + 1,
+                                    newTitle,
+                                    newPriority,
+                                    newDay
+                                )
                             )
-                        )
+                        }
                     }
+                    myIntent()
+                } else {
+                    Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 }
-                myIntent()
             }
         }
     }
+
 
     private fun myIntent() {
         val intent = Intent(this, MainActivity::class.java)
