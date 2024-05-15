@@ -18,7 +18,7 @@ class UpdateCard : AppCompatActivity() {
     private lateinit var database: myDatabase
     private lateinit var binding: ActivityUpdateCardBinding
 
-    // Inside the UpdateCard class
+
 
     private val validDaysOfWeek = listOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
 
@@ -103,7 +103,6 @@ class UpdateCard : AppCompatActivity() {
             }
         }
     }
-
     private fun myIntent() {
       val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
